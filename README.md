@@ -25,5 +25,5 @@ Microcontroller reading sensor values and sending them to LCD screen. Also equip
 - 2x M3x8 countersunk screws
 - Micro SD-card for uploading file to Nextion
 - Case printed from PETG with Creality Ender 3 V2
-# Total price about 120€
+### Total price about 120€
 
