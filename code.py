@@ -109,7 +109,12 @@ can = canio.CAN(rx=board.CAN_RX, tx=board.CAN_TX, baudrate=500_000, auto_restart
 # CAN listener 0x600 - 0x607
 listener = can.listen(matches=[canio.Match(0x600, mask=0x608)], timeout=.9)
 
-# Shift light
+# Shift light is using 5 steps:
+# 1. step: 2 leds are on (rpm > END - 3 * STEP)
+# 2. step: 4 leds are on (rpm > END - 2 * STEP)
+# 3. step: 6 leds are on (rpm > END - STEP) 
+# 4. step: all leds are on (rpm > END) 
+# 5. step: all leds flashing (rpm > END + STEP)
 # SETUP
 END = 8600
 STEP = 100
