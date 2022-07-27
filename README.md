@@ -8,7 +8,7 @@ Microcontroller reading sensor values and sending them to LCD screen. Also equip
 - MPM3610 5V 1.2A Buck Converter Breakout
 - Nextion Discovery 3.5" (NX4832F035)
 - CR1220 battery
-- pcb own desing
+- pcb own desing (from JLCPCB)
 - JST-SM 4pin connector pair
 - JST-XH female cpnnector
 - 2A fast diode
@@ -29,8 +29,7 @@ Microcontroller reading sensor values and sending them to LCD screen. Also equip
 - 
 ### Putting it to together:
 One modification is needed for the Feather: Remove resistor next to the EN-pin (R8 on schematic). This disables the battery charger chip and then you can use the BAT-pin for 5v input. With this modification done you can connect it to computer with auxiliar power supply without worries. 
-I had to drill bigger mounting holes to the Nextion to rotate the screen slightly, because screen wasn't installed straight to the pcb. 
-Upload HMI file to sd card and Nextion will upload it when powered, then remove sd card. You also need to change the baudrate to 115200 with code.py. 
+I had to drill bigger mounting holes to the Nextion to rotate the screen slightly, because screen wasn't installed straight to the pcb. I used hot glue to the photoresistor. Upload HMI file to sd card and Nextion will upload it when powered, then remove sd card. You also need to change the baudrate to 115200 with code.py. 
 
 Pcb on this picture is earlier prototype. Feather had a faulty voltage booster so I had to delete it. 
 ![image1](/pictures/IMG_20220727_231424.jpg)
