@@ -1,5 +1,5 @@
 # Emu_Black_DIY_screen_35
-Microcontroller reading sensor values and sending them to LCD screen. Also equipped with shift light.  
+Microcontroller reading sensor values and sending them to LCD screen. Also equipped with shift light and light sensor to control screen and shift light brightness. 
 
 ### Parts used:
 - Adafruit Feather M4 CAN Express with ATSAME51
@@ -24,4 +24,6 @@ Microcontroller reading sensor values and sending them to LCD screen. Also equip
 - 4x M3x10 countersunk screws
 - 2x M3x8 countersunk screws
 - Micro SD-card for uploading file to Nextion
+- Case printed from PETG with Creality Ender 3 V2
+# Total price about 120€
 
