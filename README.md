@@ -32,8 +32,9 @@ One modification is needed for the Feather: Remove resistor next to the EN-pin (
 I had to drill bigger mounting holes to the Nextion to rotate the screen slightly, because screen wasn't installed straight to the pcb. Hot glue is used to the photoresistor. 
 
 ### Setup
- Upload HMI file to sd card and Nextion will upload it when powered, then remove sd card. You also need to change the baudrate to 115200 with code.py. 
- Check Adafruit guide for setting up the Feather. Shift light setup guide is in the code.py.  
+Check Adafruit guide for setting up the Feather. Upload HMI file to sd card and Nextion will upload it when powered, then remove sd card. 
+You also need to change the  baudrate to 115200 with code.py. Shift light setup guide is in the code.py. 
+
 Pcb on this picture is earlier prototype. Feather had a faulty voltage booster so I had to delete it. 
 ![image1](/pictures/IMG_20220727_231424.jpg)
 ![image1](/pictures/IMG_20220727_231604.jpg)
