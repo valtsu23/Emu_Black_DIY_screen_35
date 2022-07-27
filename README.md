@@ -30,6 +30,7 @@ Microcontroller reading sensor values and sending them to LCD screen. Also equip
 ### Putting it to together:
 One modification is needed for the Feather: Remove resistor next to the EN-pin (R8 on schematic). This disables the battery charger chip and then you can use the BAT-pin for 5v input. With this modification done you can connect it to computer with auxiliar power supply without worries. 
 I had to drill bigger mounting holes to the Nextion to rotate the screen slightly, because screen wasn't installed straight to the pcb. 
+Upload HMI file to sd card and Nextion will upload it when powered, then remove sd card. You also need to change the baudrate to 115200 with code.py. 
 
 Pcb on this picture is earlier prototype. Feather had a faulty voltage booster so I had to delete it. 
 ![image1](/pictures/IMG_20220727_231424.jpg)
