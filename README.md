@@ -10,7 +10,7 @@ Microcontroller reading sensor values and sending them to LCD screen. Also equip
 - CR1220 battery
 - pcb own desing (from JLCPCB)
 - JST-SM 4pin connector pair
-- JST-XH female cpnnector
+- JST-XH female connector
 - 2A fast diode
 - tantalum capacitor 0,47µF 35V
 - 1kohm 0,6W resistor
