@@ -1,7 +1,7 @@
 # Emu_Black_DIY_screen_35
 Microcontroller reading sensor values and sending them to LCD screen. Also equipped with shift light and light sensor to control screen and shift light brightness. 
 
-### Parts used:
+### Parts used (total about 130€):
 - Adafruit Feather M4 CAN Express with ATSAME51
 - Adafruit DS3231 Precision RTC Breakout (blue one)
 - NeoPixel Stick - 8 x 5050 RGB LED
@@ -26,10 +26,9 @@ Microcontroller reading sensor values and sending them to LCD screen. Also equip
 - magnetic car phone holder
 - micro SD-card for uploading file to Nextion
 - case printed from PETG with Creality Ender 3 V2
-### Total price about 130€
-
-Putting it together was pretty simple.
+- 
+### Putting it to together:
 One modification is needed for the Feather: Remove resistor next to the EN-pin (R8 on schematic). This disables the battery charger chip and then you can use the BAT-pin for 5v input. With this modification done you can connect it to computer with auxiliar power supply without worries. 
-I had to drill bigger mounting holes to the Nextion to totate the screen slightly, because the screen wasn't installed straight to the pcb. 
+I had to drill bigger mounting holes to the Nextion to rotate the screen slightly, because screen wasn't installed straight to the pcb. 
 
 
