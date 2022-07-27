@@ -8,14 +8,14 @@ Microcontroller reading sensor values and sending them to LCD screen. Also equip
 - MPM3610 5V 1.2A Buck Converter Breakout
 - Nextion Discovery 3.5" (NX4832F035)
 - CR1220 battery
-- PCB own desing
+- pcb own desing
 - JST-SM 4pin connector pair
 - JST-XH female cpnnector
 - 2A fast diode
-- Tantalum capacitor 0,47µF 35V
+- tantalum capacitor 0,47µF 35V
 - 1kohm 0,6W resistor
-- Photoresistor 200R - 500K
-- Side actuated tactile switch (TE 1-1825027-1)
+- photoresistor 200R - 500K
+- side actuated tactile switch (TE 1-1825027-1)
 - 1row 90 degree pin header 2,54mm
 - 2 pin DuPont style housing
 - 3 pin DuPont style housing
@@ -23,7 +23,13 @@ Microcontroller reading sensor values and sending them to LCD screen. Also equip
 - 4x M3x5 button head screws
 - 4x M3x10 countersunk screws
 - 2x M3x8 countersunk screws
-- Micro SD-card for uploading file to Nextion
-- Case printed from PETG with Creality Ender 3 V2
-### Total price about 120€
+- magnetic car phone holder
+- micro SD-card for uploading file to Nextion
+- case printed from PETG with Creality Ender 3 V2
+### Total price about 130€
+
+Putting it together was pretty simple.
+One modification is needed for the Feather: Remove resistor next to the EN-pin (R8 on schematic). This disables the battery charger chip and then you can use the BAT-pin for 5v input. With this modification done you can connect it to computer with auxiliar power supply without worries. 
+I had to drill bigger mounting holes to the Nextion to totate the screen slightly, because the screen wasn't installed straight to the pcb. 
+
 
