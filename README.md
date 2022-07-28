@@ -1,5 +1,6 @@
 # Emu_Black_DIY_screen_35
 Microcontroller reading sensor values and sending them to LCD screen. Also equipped with shift light and light sensor to control screen and shift light brightness. 
+![image1](/pictures/IMG_20220728_215339.jpg)
 
 ### Parts used (total about 130€):
 - Adafruit Feather M4 CAN Express with ATSAME51
@@ -39,7 +40,7 @@ You also need to change the  baudrate to 115200 with code.py. Shift light setup 
 https://youtu.be/XviCfcwE8Wc
 
 ### Pictures
-![image1](/pictures/IMG_20220728_215339.jpg)
+
 Pcb on this picture is earlier prototype. Feather had a faulty voltage booster so I had to delete it. 
 ![image1](/pictures/IMG_20220727_231424.jpg)
 ![image1](/pictures/IMG_20220727_231604.jpg)
