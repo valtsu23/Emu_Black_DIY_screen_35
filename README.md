@@ -36,7 +36,7 @@ Check Adafruit guide for setting up the Feather. Upload HMI file to sd card and 
 You also need to change the  baudrate to 115200 with code.py. Shift light setup guide is in the code.py. 
 
 ### Video of the shift light action
-https://www.youtube.com/embed/XviCfcwE8Wc
+https://youtu.be/XviCfcwE8Wc
 
 ![image1](/pictures/IMG_20220728_215339.jpg)
 Pcb on this picture is earlier prototype. Feather had a faulty voltage booster so I had to delete it. 
