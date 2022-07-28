@@ -132,10 +132,10 @@ old_errors = 0
 # counter = 0
 
 while True:
+    # Debug
     # counter += 1
     # if counter > 1000:
     #    break
-    # Debug
     # rpm -= 1
     # print(rpm)
     # Uart message receiving
