@@ -43,6 +43,8 @@ https://youtu.be/XviCfcwE8Wc
 
 Pcb on this picture is earlier prototype. Feather had a faulty voltage booster so I had to delete it. 
 ![image1](/pictures/IMG_20220727_231424.jpg)
+New one:
+![image1](/pictures/Base_board_V1_Top.png)
 ![image1](/pictures/IMG_20220727_231604.jpg)
 ![image1](/pictures/IMG_20220727_234645.jpg)
 ![image1](/pictures/IMG_20220727_234736.jpg)
