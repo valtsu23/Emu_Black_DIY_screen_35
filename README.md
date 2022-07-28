@@ -38,6 +38,7 @@ You also need to change the  baudrate to 115200 with code.py. Shift light setup 
 ### Video of the shift light action
 https://youtu.be/XviCfcwE8Wc
 
+### Pictures
 ![image1](/pictures/IMG_20220728_215339.jpg)
 Pcb on this picture is earlier prototype. Feather had a faulty voltage booster so I had to delete it. 
 ![image1](/pictures/IMG_20220727_231424.jpg)
