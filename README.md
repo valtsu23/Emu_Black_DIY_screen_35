@@ -1,5 +1,5 @@
 # Emu_Black_DIY_screen_35
-Microcontroller reading sensor values and sending them to LCD screen. Also equipped with shift light and light sensor to control screen and shift light brightness. Also supports errorflags. It shows amount of errors and name of the first two errors. 
+Microcontroller reading sensor values from can bus and sending them to LCD screen. Also equipped with shift light and light sensor to control screen and shift light brightness. Also supports errorflags. It shows amount of errors and name of the first two errors. 
 ![image1](/pictures/IMG_20220728_215339.jpg)
 
 ### Parts used (total about 130€):
