@@ -35,7 +35,7 @@ I had to drill bigger mounting holes to the Nextion to rotate the screen slightl
 Check Adafruit guide for setting up the Feather. Upload HMI file to sd card and Nextion will upload it when powered, then remove sd card. 
 You also need to change the  baudrate to 115200 with code.py. Shift light setup guide is in the code.py. 
 
-### Video of the sift light action
+### Video of the shift light action
 https://www.youtube.com/embed/XviCfcwE8Wc
 
 ![image1](/pictures/IMG_20220728_215339.jpg)
