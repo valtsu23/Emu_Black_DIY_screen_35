@@ -39,6 +39,10 @@ You also need to change the  baudrate to 115200 with code.py. Shift light setup 
 ### Video of the shift light action
 https://youtu.be/XviCfcwE8Wc
 
+### Conclusion
+The screen brightness is ok, but still could be brighter. Using black and white colours does help in the sunlight. 
+Otherwise it has been working well. Early days still. 
+
 ### Pictures
 
 Pcb on this picture is earlier prototype. Feather had a faulty voltage booster so I had to delete it. 
