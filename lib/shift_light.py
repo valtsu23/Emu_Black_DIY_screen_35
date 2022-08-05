@@ -51,16 +51,16 @@ def action(rpm, STEP, END, br):
             if shift > shift_changed:
                 # if shift_changed >= 0 and shift_changed < 4:
                 print("Rpm goes down")
-                if shift == 0:
+                if shift_changed == 0:
                     pixels[3] = ((0, 0, 0))
                     pixels[4] = ((0, 0, 0))
-                elif shift == 1:
+                elif shift_changed == 1:
                     pixels[2] = ((0, 0, 0))
                     pixels[5] = ((0, 0, 0))
-                elif shift == 2:
+                elif shift_changed == 2:
                     pixels[1] = ((0, 0, 0))
                     pixels[6] = ((0, 0, 0))
-                elif shift == 3:
+                elif shift_changed == 3:
                     pixels[0] = ((0, 0, 0))
                     pixels[7] = ((0, 0, 0))
         # Save the new state
