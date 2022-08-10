@@ -27,7 +27,7 @@ Microcontroller reading sensor values from can bus and sending them to LCD scree
 - magnetic car phone holder
 - micro SD-card for uploading file to Nextion
 - case printed from PETG with Creality Ender 3 V2
-- 
+
 ### Putting it to together:
 One modification is needed for the Feather: Remove resistor next to the EN-pin (R8 on schematic). This disables the battery charger chip and then you can use the BAT-pin for 5v input. With this modification done you can connect it to computer with auxiliar power supply without worries. 
 I had to drill bigger mounting holes to the Nextion to rotate the screen slightly, because screen wasn't installed straight to the pcb. Hot glue is used to the photoresistor. 
