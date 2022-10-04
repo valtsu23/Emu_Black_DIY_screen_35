@@ -1,3 +1,6 @@
+# Version 2
+# Dimmer improved by slower reaction to ambient light change. 
+
 import board
 import busio
 import time
@@ -41,7 +44,7 @@ if False:
 
 # Error flags
 ERRORFLAGS = ("", "OILP", "EWG", "DSG", "DIFFCTRL", "FPR", "DBW", "FF_SENSOR",
-              "KNOCKING", "ERROR_EGT_ALARM", "EGT2", "EGT1", "WBO", "MAP", "IAT", "CLT")
+              "KNOCKING", "EGT_ALARM", "EGT2", "EGT1", "WBO", "MAP", "IAT", "CLT")
 def error_flags(number):
     # Convert to bit list
     bit_list = [x - ord("0") for x in b"{:016b}".format(number)]
@@ -65,7 +68,7 @@ def error_flags(number):
 
 # Light sensor
 ADC = analogio.AnalogIn(board.A0)
-def l_sensor():
+def is_dark():
     a_val = ADC.value
     # print(a_val)
     if a_val > 35000:
@@ -87,10 +90,8 @@ def dimmer(value):
         led_br = 80
         # print("dim=100")
 
-# Run dimmer at starup
-dim = l_sensor()
-old_dim = dim
-dimmer(dim)
+# Run at startup
+dimmer(is_dark())
 
 # CAN BUS
 # The CAN transceiver has a standby pin, bring it out of standby mode
@@ -99,9 +100,9 @@ if hasattr(board, 'CAN_STANDBY'):
     standby.switch_to_output(False)
 
 # The CAN transceiver is powered by a boost converter, turn on its supply
-if hasattr(board, 'BOOST_ENABLE'):
-    boost_enable = digitalio.DigitalInOut(board.BOOST_ENABLE)
-    boost_enable.switch_to_output(True)
+# if hasattr(board, 'BOOST_ENABLE'):
+#    boost_enable = digitalio.DigitalInOut(board.BOOST_ENABLE)
+#    boost_enable.switch_to_output(True)
 
 # Can Bus pins
 can = canio.CAN(rx=board.CAN_RX, tx=board.CAN_TX, baudrate=500_000, auto_restart=True)
@@ -109,12 +110,7 @@ can = canio.CAN(rx=board.CAN_RX, tx=board.CAN_TX, baudrate=500_000, auto_restart
 # CAN listener 0x600 - 0x607
 listener = can.listen(matches=[canio.Match(0x600, mask=0x608)], timeout=.9)
 
-# Shift light is using 5 steps:
-# 1. step: 2 leds are on (rpm > END - 3 * STEP)
-# 2. step: 4 leds are on (rpm > END - 2 * STEP)
-# 3. step: 6 leds are on (rpm > END - STEP) 
-# 4. step: all leds are on (rpm > END) 
-# 5. step: all leds flashing (rpm > END + STEP)
+# Shift light
 # SETUP
 END = 8600
 STEP = 100
@@ -129,6 +125,9 @@ old_bus_state = None
 shift_light_off = False
 rpm = 0
 old_errors = 0
+old_dark = is_dark()
+t1 = time.monotonic()
+dim_counter = 0
 # counter = 0
 
 while True:
@@ -138,6 +137,7 @@ while True:
     #    break
     # rpm -= 1
     # print(rpm)
+
     # Uart message receiving
     receiving_data = False
     buffer = uart.in_waiting
@@ -177,18 +177,17 @@ while True:
         old_clock = clock
 
     # Dimmer
-    dim = l_sensor()
-    if dim is not old_dim:
-        dim_v_c = True
-        old_dim = dim
-        # Test
+    dark = is_dark()
+
+    if dark is not old_dark and time.monotonic() > t1:
+        dim_counter += 1
         t1 = time.monotonic() + 0.5
-        timer_needed = True
-    if timer_needed is True and time.monotonic() > t1:
-        dim = l_sensor()
-        if old_dim is dim:
-            dimmer(dim)
-        timer_needed = False
+    elif dark is old_dark:
+        dim_counter = 0
+
+    if dim_counter > 6:
+        dimmer(dark)
+        old_dark = dark
 
     # CAN BUS
     # Bus state information
@@ -211,7 +210,9 @@ while True:
         continue
 
     id = message.id
-    print("Received a message with id:", (hex(id)))
+
+    # Printing received messages
+    # print("Received a message with id:", (hex(id)))
 
     if id == 0x600:
         # Unpack message
@@ -264,4 +265,3 @@ while True:
     elif rpm < END - STEP * 5 and shift_light_off is False:
         shift_light.leds_off()
         shift_light_off = True
-
