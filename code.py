@@ -1,5 +1,6 @@
-# Version 2
-# Dimmer improved by slower reaction to ambient light change. 
+# Version 2.1
+# - Exception Handling on I2C communication setup to prevent errors
+# - Dimmer improved by slower reaction to ambient light change
 
 import board
 import busio
@@ -12,7 +13,17 @@ import analogio
 import shift_light
 
 # RTC communication
-myI2C = board.I2C()
+I2C_ok = False
+
+while I2C_ok is False:
+    try:
+        myI2C = board.I2C()
+    except RuntimeError:
+        time.sleep(.1)
+        print("I2C error")
+    else:
+        I2C_ok = True
+
 rtc = adafruit_ds3231.DS3231(myI2C)
 
 if False:   # change to True if you want to write the time!
