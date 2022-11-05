@@ -45,8 +45,8 @@ def action(rpm, STEP, END, br):
                         pixels[2] = (br, br, 0)
                         pixels[5] = (br, br, 0)
                         if shift <= 0:
-                            pixels[3] = (0, br, br)
-                            pixels[4] = (0, br, br)
+                            pixels[3] = (br, 0, 0)
+                            pixels[4] = (br, 0, 0)
             # If rpm goes down
             if shift > shift_changed:
                 # if shift_changed >= 0 and shift_changed < 4:
